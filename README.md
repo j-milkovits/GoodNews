@@ -36,6 +36,7 @@ The structure of this repo is as follows:
 
 # Get the data
 You have 3 options to get the data. 
+[SharePoint Link](https://cvcuab-my.sharepoint.com/personal/abiten_cvc_uab_cat/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fabiten%5Fcvc%5Fuab%5Fcat%2FDocuments%2Fgoodnews) for all files.
 
 ## Images only
 If you want to download the images only and directly start working on the same dataset as ours, 
@@ -44,6 +45,8 @@ then download the cleaned version of the dataset without images:
 and put it to data/ folder and 
 download the [img_urls.json](https://cvcuab-my.sharepoint.com/:u:/g/personal/abiten_cvc_uab_cat/Ef0W_O-HU59Pn22b9Bni5oABLDtkBUFFMXiN5cl2vnQxFg?e=75fpWW)
 and put it in the `get_data/get_images_only/` folder.
+
+> article+caption.json loads forever on sharepoint: replace 'e=jtQU0Z' with 'download=1'
 
 Then run  
 ```bash
@@ -104,6 +107,7 @@ This part is for cleaning the captions (tokenizing, removing non-ascii character
 In other words, we change the caption "Alber Einstein taught in Princeton in 1926" to "PERSON_ taught in ORGANIZATION_ in DATE_."
 Move to ```preprocess/``` folder and run
 ```bash
+python -m spacy download en
 python clean_captions.py
 ```
 ### Resize Images
